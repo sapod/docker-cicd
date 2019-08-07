@@ -44,7 +44,7 @@ job('NodeJS Docker example') {
     }
 }
 
-pipelinejob('boilerplate-pipeline') {
+pipelineJob('boilerplate-pipeline') {
     definition {
         cpsScm {
             scm {
