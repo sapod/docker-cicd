@@ -49,8 +49,8 @@ pipelineJob('boilerplate-pipeline') {
         cpsScm {
             scm {
                 git('git://github.com/sapod/docker-cicd.git')
-                branches('master', '**/feature*')
-                scriptPath('./basics/misc/jenkinsfile')
+                branches('master')
+                scriptPath('./basics/misc/Jenkinsfile')
                 extensions {}
             }
         }  
