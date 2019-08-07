@@ -7,14 +7,13 @@ node {
    }
    stage('test') {
      nodejs(nodeJSInstallationName: 'NodeJS11') {
-       sh 'cd ./basics'
-       sh 'npm install --only=dev'
-       sh 'npm test'
+       sh 'cd ./basics&&npm install --only=dev'
+       sh 'cd ./basics&&npm test'
      }
    }
    stage('docker build/push') {
      docker.withRegistry('https://index.docker.io/v1/', 'dockeryaniv') {
-       def app = docker.build("yanivomc/docker-nodejs-demo:${commit_id}", '.').push()
+       def app = docker.build("yanivomc/docker-nodejs-demo:${commit_id}", './basics').push()
      }
    }
    stage('docker run') {
