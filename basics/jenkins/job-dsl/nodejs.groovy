@@ -49,7 +49,7 @@ pipelineJob('boilerplate-pipeline') {
         cpsScm {
             scm {
                 git {
-                    remote{url{'git://github.com/sapod/docker-cicd.git'}}
+                    remote{url('git://github.com/sapod/docker-cicd.git')}
                     branches('master')
                     scriptPath('./basics/misc/Jenkinsfile')
                     extensions {}
